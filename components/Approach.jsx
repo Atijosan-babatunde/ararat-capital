@@ -1,5 +1,8 @@
+"use client";
+
+import { useState } from "react";
 import Reveal from "./Reveal";
-import { Search, ShieldCheck, LayoutGrid, Settings2, TrendingUp, HeartHandshake } from "lucide-react";
+import { Search, ShieldCheck, LayoutGrid, Settings2, TrendingUp, HeartHandshake, ChevronDown } from "lucide-react";
 
 const PRINCIPLES = [
   {
@@ -35,6 +38,8 @@ const PRINCIPLES = [
 ];
 
 export default function Approach() {
+  const [openIndex, setOpenIndex] = useState(0);
+
   return (
     <section id="approach" className="section section-alt">
       <div className="container">
@@ -43,18 +48,32 @@ export default function Approach() {
           <h2>How we operate</h2>
         </Reveal>
 
-        <div className="approach-grid">
-          {PRINCIPLES.map((p, i) => (
-            <Reveal className="approach-card" key={p.title}>
-              <div className="icon">
-                <p.icon size={26} />
+        <Reveal className="approach-accordion" as="div">
+          {PRINCIPLES.map((p, i) => {
+            const isOpen = i === openIndex;
+            return (
+              <div className={`accordion-item${isOpen ? " open" : ""}`} key={p.title}>
+                <button
+                  type="button"
+                  className="accordion-trigger"
+                  aria-expanded={isOpen}
+                  onClick={() => setOpenIndex(isOpen ? -1 : i)}
+                >
+                  <span className="accordion-icon">
+                    <p.icon size={20} />
+                  </span>
+                  <span className="accordion-title">{p.title}</span>
+                  <ChevronDown size={18} className="accordion-chevron" />
+                </button>
+                <div className="accordion-panel">
+                  <div className="accordion-panel-inner">
+                    <p>{p.desc}</p>
+                  </div>
+                </div>
               </div>
-              {/* <div className="step-number">{String(i + 1).padStart(2, "0")}</div> */}
-              <h3>{p.title}</h3>
-              <p>{p.desc}</p>
-            </Reveal>
-          ))}
-        </div>
+            );
+          })}
+        </Reveal>
       </div>
     </section>
   );

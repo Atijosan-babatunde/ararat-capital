@@ -6,7 +6,7 @@ export default function Hero() {
       <div className="container">
         <div className="hero-content">
           {/* <img src="/images/logo.png" alt="Ararat Capital Holdings" className="hero-logo" /> */}
-          <h1>Built on Solid Ground. Rising to the Next Summit.</h1>
+          <h1>Preserving legacy. Strengthening operations. Building for the future.</h1>
           <p className="lead">Ararat Capital Holdings acquires and operates established, owner-led businesses — preserving what already works while providing the leadership and resources to reach new heights.</p>
           <div className="hero-actions">
             <a

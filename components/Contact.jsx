@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { Phone, Mail, MapPin } from "lucide-react";
 import Reveal from "./Reveal";
 
 export default function Contact() {
@@ -44,37 +43,40 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="section">
+    <section id="contact" className="section owners-banner">
       <div className="container">
-        <Reveal className="section-heading" as="div">
-          <span className="eyebrow">Contact Us</span>
-          <h2>Let&apos;s start a conversation</h2>
-        </Reveal>
-
         <div className="contact-wrap">
-          <Reveal className="contact-info" as="div">
-            <h3>Get in touch</h3>
-            <div className="item">
-              <div className="label">
-                <Phone size={14} /> Telephone
-              </div>
-              <a href="tel:+44 777 750 6569">+44 777 750 6569</a>
-            </div>
-            <div className="item">
-              <div className="label">
-                <Mail size={14} /> E-mail
-              </div>
-              <a href="mailto:info@araratcapitalholdings.com">info@araratcapitalholdings.com</a>
-            </div>
-            <div className="item">
-              <div className="label">
-                <MapPin size={14} /> Location
-              </div>
-              <span>[United Kingdom]</span>
-            </div>
+          <Reveal className="owners-inner owners-inner-left" as="div">
+            <span className="eyebrow eyebrow-light">For Business Owners</span>
+            <h2>Choosing the right buyer matters</h2>
+            <p>
+              You may be ready to retire, reduce your involvement, solve a succession challenge, or
+              find a partner who can take the business into its next stage. At Ararat Capital
+              Holdings, we offer more than capital — we bring a structured operating approach,
+              practical transformation experience and a long-term mindset.
+            </p>
+            <p>
+              We take time to understand your business before making changes. We care about
+              protecting the trust you have built with your customers, employees and suppliers. Our
+              aim is to create a smooth transition and help the business continue to thrive after
+              acquisition.
+            </p>
+
+            <blockquote>
+              Ararat Capital Holdings exists to acquire, strengthen and grow established businesses.
+              We are interested in businesses with strong foundations, loyal customers and untapped
+              potential — especially where clearer structure, better systems and a stronger
+              operating model can unlock the next stage of growth.
+              <footer>
+                For owners considering succession or a responsible exit, we provide a thoughtful,
+                capable and long-term home for the business they have built.
+              </footer>
+            </blockquote>
           </Reveal>
 
           <Reveal className="contact-form" as="div">
+            <span className="eyebrow">Contact Us</span>
+            <h3>Let&apos;s start a conversation</h3>
             {status === "success" ? (
               <div className="form-success">Thank you! We will get back to you as soon as possible.</div>
             ) : (

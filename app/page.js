@@ -11,7 +11,6 @@ import Philosophy from "@/components/Philosophy";
 import Founder from "@/components/Founder";
 import Advisors from "@/components/Advisors";
 import WhyUs from "@/components/WhyUs";
-import ForOwners from "@/components/ForOwners";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -31,7 +30,6 @@ export default function Home() {
       {/* <Founder /> */}
       {/* <Advisors /> */}
       <WhyUs />
-      <ForOwners />
       <Contact />
       <Footer />
     </>

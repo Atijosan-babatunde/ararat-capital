@@ -9,12 +9,12 @@ const TRAITS = [
   {
     photo: "/images/trait-hands-on.jpg",
     title: "Hands-On Operators",
-    desc: "We don't just oversee the business — we become part of it, working alongside the people who know it best to understand its operations from the inside out. The best opportunities to create value aren't found in presentations; they're uncovered by being close enough to see what others miss.",
+    desc: "We don't just oversee the business we become part of it, working alongside the people who know it best to understand its operations from the inside out. The best opportunities to create value aren't found in presentations; they're uncovered by being close enough to see what others miss.",
   },
   {
     photo: "/images/trait-structured.jpg",
     title: "Structured Approach",
-    desc: "Before accelerating growth, foundations are established — people, processes, systems, financial controls, governance. Nothing is overlooked. We believe strong businesses aren't built on momentum, but on the discipline and structure that allow growth to last.",
+    desc: "Before accelerating growth, foundations are established people, processes, systems, financial controls, governance. Nothing is overlooked. We believe strong businesses aren't built on momentum, but on the discipline and structure that allow growth to last.",
   },
   {
     photo: "/images/trait-stewardship.jpg",

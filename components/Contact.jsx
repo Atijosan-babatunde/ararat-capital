@@ -49,7 +49,7 @@ export default function Contact() {
           <Reveal className="owners-inner owners-inner-left" as="div">
             <span className="eyebrow eyebrow-light">For Business Owners</span>
             <h2>Choosing the right buyer matters</h2>
-            <p>
+            {/* <p>
               You may be ready to retire, reduce your involvement, solve a succession challenge, or
               find a partner who can take the business into its next stage. At Ararat Capital
               Holdings, we offer more than capital — we bring a structured operating approach,
@@ -60,17 +60,11 @@ export default function Contact() {
               protecting the trust you have built with your customers, employees and suppliers. Our
               aim is to create a smooth transition and help the business continue to thrive after
               acquisition.
-            </p>
+            </p> */}
 
             <blockquote>
-              Ararat Capital Holdings exists to acquire, strengthen and grow established businesses.
-              We are interested in businesses with strong foundations, loyal customers and untapped
-              potential — especially where clearer structure, better systems and a stronger
-              operating model can unlock the next stage of growth.
-              <footer>
-                For owners considering succession or a responsible exit, we provide a thoughtful,
-                capable and long-term home for the business they have built.
-              </footer>
+              Ararat Capital Holdings exists to acquire, strengthen and grow established businesses. We are interested in businesses with strong foundations, loyal customers and untapped potential — especially where clearer structure, better systems and a stronger operating model can unlock the next stage of growth.
+              <footer>For owners considering succession or a responsible exit, we provide a thoughtful, capable and long-term home for the business they have built.</footer>
             </blockquote>
           </Reveal>
 

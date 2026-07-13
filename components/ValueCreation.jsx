@@ -1,5 +1,8 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
 import Reveal from "./Reveal";
-import { LayoutGrid, Workflow, Cpu, BarChart3, ShieldCheck, Handshake, Repeat } from "lucide-react";
+import { LayoutGrid, Workflow, Cpu, BarChart3, ShieldCheck, Handshake, Repeat, ChevronLeft, ChevronRight } from "lucide-react";
 
 const AREAS = [
   {
@@ -39,7 +42,57 @@ const AREAS = [
   },
 ];
 
+const TOTAL = AREAS.length;
+const CLONES = 2; // matches the max number of cards visible at once (desktop)
+const SLIDES = [...AREAS.slice(TOTAL - CLONES), ...AREAS, ...AREAS.slice(0, CLONES)];
+const AUTOPLAY_MS = 4000;
+
 export default function ValueCreation() {
+  const [index, setIndex] = useState(CLONES);
+  const [animate, setAnimate] = useState(true);
+  const timerRef = useRef(null);
+
+  const advance = (dir) => setIndex((i) => i + dir);
+
+  const restartTimer = () => {
+    clearInterval(timerRef.current);
+    timerRef.current = setInterval(() => advance(1), AUTOPLAY_MS);
+  };
+
+  useEffect(() => {
+    restartTimer();
+    return () => clearInterval(timerRef.current);
+  }, []);
+
+  const handleTransitionEnd = () => {
+    if (index >= CLONES + TOTAL) {
+      setAnimate(false);
+      setIndex(index - TOTAL);
+    } else if (index < CLONES) {
+      setAnimate(false);
+      setIndex(index + TOTAL);
+    }
+  };
+
+  useEffect(() => {
+    if (!animate) {
+      const id = requestAnimationFrame(() => setAnimate(true));
+      return () => cancelAnimationFrame(id);
+    }
+  }, [animate]);
+
+  const goTo = (i) => {
+    setIndex(i + CLONES);
+    restartTimer();
+  };
+
+  const shift = (dir) => {
+    advance(dir);
+    restartTimer();
+  };
+
+  const activeDot = ((index - CLONES) % TOTAL + TOTAL) % TOTAL;
+
   return (
     <section id="value-creation" className="section">
       <div className="container">
@@ -48,17 +101,49 @@ export default function ValueCreation() {
           <h2>We create value by strengthening the foundations of a business</h2>
         </Reveal>
 
-        <div className="value-grid">
-          {AREAS.map((a) => (
-            <Reveal className="value-card" key={a.title}>
-              <div className="icon">
-                <a.icon size={24} />
+        <Reveal as="div">
+          <div className="value-carousel" onMouseEnter={() => clearInterval(timerRef.current)} onMouseLeave={restartTimer}>
+            <button type="button" className="value-carousel-arrow prev" aria-label="Previous" onClick={() => shift(-1)}>
+              <ChevronLeft size={20} />
+            </button>
+
+            <div className="value-viewport">
+              <div
+                className="value-track"
+                style={{ "--index": index, transition: animate ? undefined : "none" }}
+                onTransitionEnd={handleTransitionEnd}
+              >
+                {SLIDES.map((a, i) => (
+                  <div className="value-slide" key={`${a.title}-${i}`}>
+                    <div className="value-card">
+                      <div className="icon">
+                        <a.icon size={24} />
+                      </div>
+                      <h3>{a.title}</h3>
+                      <p>{a.desc}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
-              <h3>{a.title}</h3>
-              <p>{a.desc}</p>
-            </Reveal>
-          ))}
-        </div>
+            </div>
+
+            <button type="button" className="value-carousel-arrow next" aria-label="Next" onClick={() => shift(1)}>
+              <ChevronRight size={20} />
+            </button>
+          </div>
+
+          <div className="value-carousel-dots">
+            {AREAS.map((a, i) => (
+              <button
+                key={a.title}
+                type="button"
+                className={`value-dot${i === activeDot ? " active" : ""}`}
+                aria-label={`Go to ${a.title}`}
+                onClick={() => goTo(i)}
+              />
+            ))}
+          </div>
+        </Reveal>
       </div>
     </section>
   );

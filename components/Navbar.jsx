@@ -6,9 +6,9 @@ import { Menu, X } from "lucide-react";
 const LINKS = [
   { href: "#who-we-are", label: "Who We Are" },
   { href: "#approach", label: "Our Approach" },
-  { href: "#criteria", label: "What We Look For" },
+  // { href: "#criteria", label: "What We Look For" },
   { href: "#process", label: "Our Process" },
-  { href: "#founder", label: "Founder" },
+  // { href: "#founder", label: "Founder" },
   { href: "#contact", label: "Contact Us" },
 ];
 

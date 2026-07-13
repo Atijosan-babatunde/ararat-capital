@@ -63,8 +63,8 @@ export default function Contact() {
             </p> */}
 
             <blockquote>
-              Ararat Capital Holdings exists to acquire, strengthen and grow established businesses. We are interested in businesses with strong foundations, loyal customers and untapped potential — especially where clearer structure, better systems and a stronger operating model can unlock the next stage of growth.
-              <footer>For owners considering succession or a responsible exit, we provide a thoughtful, capable and long-term home for the business they have built.</footer>
+              Ararat Capital Holdings exists to acquire, strengthen and grow established businesses. We are interested in businesses with strong foundations, loyal customers and untapped potential especially where clearer structure, better systems and a stronger operating model can unlock the next stage of growth.
+              <footer>For owners considering succession or a responsible exit, we provide a thoughtful, capable and long term home for the business they have built.</footer>
             </blockquote>
           </Reveal>
 

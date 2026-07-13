@@ -8,12 +8,12 @@ const PRINCIPLES = [
   {
     icon: Search,
     title: "Understand before changing",
-    desc: "We begin by understanding how the business truly operates — the people, processes, systems, customer experience, revenue flows, pain points and operational risks. We take time to understand what has made the business successful before deciding what needs to improve.",
+    desc: "We begin by understanding how the business truly operates the people, processes, systems, customer experience, revenue flows, pain points and operational risks. We take time to understand what has made the business successful before deciding what needs to improve.",
   },
   {
     icon: ShieldCheck,
     title: "Protect what works",
-    desc: "Every good business has strengths that should be protected — customer relationships, staff knowledge, brand reputation, supplier relationships or founder-led ways of working. We preserve the parts of the business that create value while improving the areas that limit growth.",
+    desc: "Every good business has strengths that should be protected customer relationships, staff knowledge, brand reputation, supplier relationships or founder led ways of working. We preserve the parts of the business that create value while improving the areas that limit growth.",
   },
   {
     icon: LayoutGrid,
@@ -28,12 +28,12 @@ const PRINCIPLES = [
   {
     icon: TrendingUp,
     title: "Build for sustainable growth",
-    desc: "Our focus is not short-term change. We aim to build businesses that can operate more effectively, serve customers better, support employees properly, and grow in a controlled way.",
+    desc: "Our focus is not short term change. We aim to build businesses that can operate more effectively, serve customers better, support employees properly, and grow in a controlled way.",
   },
   {
     icon: HeartHandshake,
     title: "Lead with integrity and continuity",
-    desc: "We understand that selling a business is personal. We take a respectful approach to succession, transition and post-acquisition integration — our aim is to protect the business, its people and its legacy.",
+    desc: "We understand that selling a business is personal. We take a respectful approach to succession, transition and post acquisition integration our aim is to protect the business, its people and its legacy.",
   },
 ];
 
@@ -53,12 +53,7 @@ export default function Approach() {
             const isOpen = i === openIndex;
             return (
               <div className={`accordion-item${isOpen ? " open" : ""}`} key={p.title}>
-                <button
-                  type="button"
-                  className="accordion-trigger"
-                  aria-expanded={isOpen}
-                  onClick={() => setOpenIndex(isOpen ? -1 : i)}
-                >
+                <button type="button" className="accordion-trigger" aria-expanded={isOpen} onClick={() => setOpenIndex(isOpen ? -1 : i)}>
                   <span className="accordion-icon">
                     <p.icon size={20} />
                   </span>

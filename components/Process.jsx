@@ -1,13 +1,5 @@
 import Reveal from "./Reveal";
-import {
-  MessageCircle,
-  SearchCheck,
-  Target,
-  FileText,
-  ClipboardCheck,
-  Route,
-  TrendingUp,
-} from "lucide-react";
+import { MessageCircle, SearchCheck, Target, FileText, ClipboardCheck, Route, TrendingUp } from "lucide-react";
 
 const STEPS = [
   {
@@ -18,7 +10,7 @@ const STEPS = [
   {
     icon: SearchCheck,
     title: "Business and operating model review",
-    desc: "We review both the financial performance and the operating structure of the business — customers, processes, systems, people, data, risks and growth opportunities.",
+    desc: "We review both the financial performance and the operating structure of the business customers, processes, systems, people, data, risks and growth opportunities.",
   },
   {
     icon: Target,
@@ -38,11 +30,11 @@ const STEPS = [
   {
     icon: Route,
     title: "Transition planning",
-    desc: "We agree how the business will transition after completion — the owner's involvement, employee communication, customer continuity and operational priorities.",
+    desc: "We agree how the business will transition after completion the owner's involvement, employee communication, customer continuity and operational priorities.",
   },
   {
     icon: TrendingUp,
-    title: "Post-acquisition improvement",
+    title: "Post acquisition improvement",
     desc: "After completion, we focus on stability first, then targeted improvements that strengthen the business without disrupting what already works.",
   },
 ];

@@ -23,7 +23,7 @@ const AREAS = [
   {
     icon: BarChart3,
     title: "Data and reporting",
-    desc: "We help businesses move from informal decision-making to clearer performance visibility through dashboards, reporting and useful management information.",
+    desc: "We help businesses move from informal decision making to clearer performance visibility through dashboards, reporting and useful management information.",
   },
   {
     icon: ShieldCheck,
@@ -91,7 +91,7 @@ export default function ValueCreation() {
     restartTimer();
   };
 
-  const activeDot = ((index - CLONES) % TOTAL + TOTAL) % TOTAL;
+  const activeDot = (((index - CLONES) % TOTAL) + TOTAL) % TOTAL;
 
   return (
     <section id="value-creation" className="section">
@@ -108,11 +108,7 @@ export default function ValueCreation() {
             </button>
 
             <div className="value-viewport">
-              <div
-                className="value-track"
-                style={{ "--index": index, transition: animate ? undefined : "none" }}
-                onTransitionEnd={handleTransitionEnd}
-              >
+              <div className="value-track" style={{ "--index": index, transition: animate ? undefined : "none" }} onTransitionEnd={handleTransitionEnd}>
                 {SLIDES.map((a, i) => (
                   <div className="value-slide" key={`${a.title}-${i}`}>
                     <div className="value-card">
@@ -134,13 +130,7 @@ export default function ValueCreation() {
 
           <div className="value-carousel-dots">
             {AREAS.map((a, i) => (
-              <button
-                key={a.title}
-                type="button"
-                className={`value-dot${i === activeDot ? " active" : ""}`}
-                aria-label={`Go to ${a.title}`}
-                onClick={() => goTo(i)}
-              />
+              <button key={a.title} type="button" className={`value-dot${i === activeDot ? " active" : ""}`} aria-label={`Go to ${a.title}`} onClick={() => goTo(i)} />
             ))}
           </div>
         </Reveal>

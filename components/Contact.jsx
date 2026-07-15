@@ -45,67 +45,45 @@ export default function Contact() {
   return (
     <section id="contact" className="section owners-banner">
       <div className="container">
-        <div className="contact-wrap">
-          <Reveal className="owners-inner owners-inner-left" as="div">
-            <span className="eyebrow eyebrow-light">For Business Owners</span>
-            <h2>Choosing the right buyer matters</h2>
-            {/* <p>
-              You may be ready to retire, reduce your involvement, solve a succession challenge, or
-              find a partner who can take the business into its next stage. At Ararat Capital
-              Holdings, we offer more than capital — we bring a structured operating approach,
-              practical transformation experience and a long-term mindset.
-            </p>
-            <p>
-              We take time to understand your business before making changes. We care about
-              protecting the trust you have built with your customers, employees and suppliers. Our
-              aim is to create a smooth transition and help the business continue to thrive after
-              acquisition.
-            </p> */}
+        {/* <div className="contact-wrap"> */}
+        <Reveal className="contact-form" as="div">
+          <span className="eyebrow">Contact Us</span>
+          <h3>Let&apos;s start a conversation</h3>
+          {status === "success" ? (
+            <div className="form-success">Thank you! We will get back to you as soon as possible.</div>
+          ) : (
+            <form onSubmit={handleSubmit} noValidate>
+              <div className="form-row">
+                <label htmlFor="name">Name*</label>
+                <input id="name" type="text" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} />
+                {errors.name && <div className="form-error">{errors.name}</div>}
+              </div>
 
-            <blockquote>
-              Ararat Capital Holdings exists to acquire, strengthen and grow established businesses. We are interested in businesses with strong foundations, loyal customers and untapped potential especially where clearer structure, better systems and a stronger operating model can unlock the next stage of growth.
-              <footer>For owners considering succession or a responsible exit, we provide a thoughtful, capable and long term home for the business they have built.</footer>
-            </blockquote>
-          </Reveal>
+              <div className="form-row">
+                <label htmlFor="email">E-mail*</label>
+                <input id="email" type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} />
+                {errors.email && <div className="form-error">{errors.email}</div>}
+              </div>
 
-          <Reveal className="contact-form" as="div">
-            <span className="eyebrow">Contact Us</span>
-            <h3>Let&apos;s start a conversation</h3>
-            {status === "success" ? (
-              <div className="form-success">Thank you! We will get back to you as soon as possible.</div>
-            ) : (
-              <form onSubmit={handleSubmit} noValidate>
-                <div className="form-row">
-                  <label htmlFor="name">Name*</label>
-                  <input id="name" type="text" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} />
-                  {errors.name && <div className="form-error">{errors.name}</div>}
+              <div className="form-row">
+                <label htmlFor="message">Message*</label>
+                <textarea id="message" rows={5} value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} />
+                {errors.message && <div className="form-error">{errors.message}</div>}
+              </div>
+
+              {status === "error" && (
+                <div className="form-error" style={{ marginBottom: 16 }}>
+                  There was an error submitting your message. Please try again.
                 </div>
+              )}
 
-                <div className="form-row">
-                  <label htmlFor="email">E-mail*</label>
-                  <input id="email" type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} />
-                  {errors.email && <div className="form-error">{errors.email}</div>}
-                </div>
-
-                <div className="form-row">
-                  <label htmlFor="message">Message*</label>
-                  <textarea id="message" rows={5} value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} />
-                  {errors.message && <div className="form-error">{errors.message}</div>}
-                </div>
-
-                {status === "error" && (
-                  <div className="form-error" style={{ marginBottom: 16 }}>
-                    There was an error submitting your message. Please try again.
-                  </div>
-                )}
-
-                <button type="submit" className="btn btn-outline-navy" disabled={status === "sending"}>
-                  {status === "sending" ? "Sending…" : "Send"}
-                </button>
-              </form>
-            )}
-          </Reveal>
-        </div>
+              <button type="submit" className="btn btn-outline-navy" disabled={status === "sending"}>
+                {status === "sending" ? "Sending…" : "Send"}
+              </button>
+            </form>
+          )}
+        </Reveal>
+        {/* </div> */}
       </div>
     </section>
   );

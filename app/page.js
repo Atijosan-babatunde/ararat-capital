@@ -22,14 +22,14 @@ export default function Home() {
       <WhoWeAre />
       <WhatWeDo />
       <Approach />
-      <Different />
+      {/* <Different /> */}
       {/* <Criteria /> */}
       <ValueCreation />
-      <Process />
-      <Philosophy />
+      {/* <Process /> */}
+      {/* <Philosophy /> */}
       {/* <Founder /> */}
       {/* <Advisors /> */}
-      <WhyUs />
+      {/* <WhyUs /> */}
       <Contact />
       <Footer />
     </>

@@ -10,13 +10,13 @@ export default function Footer() {
             <div className="label">
               <Phone size={14} /> Telephone
             </div>
-            <a href="tel:+44 777 750 6569">+44 777 750 6569</a>
+            <a href="tel:+44 3330501811">+44 3330501811</a>
           </div>
           <div className="footer-contact-item">
             <div className="label">
               <Mail size={14} /> E-mail
             </div>
-            <a href="mailto:info@araratcapitalholdings.com">info@araratcapitalholdings.com</a>
+            <a href="mailto:lara@araratholdings.com">lara@araratholdings.com</a>
           </div>
           <div className="footer-contact-item">
             <div className="label">

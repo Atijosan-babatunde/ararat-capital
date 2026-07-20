@@ -183,7 +183,7 @@ img {
   gap: 10px;
 }
 .navbar-brand img {
-  height: 44px;
+  height: 66px;
   width: auto;
 }
 .navbar-brand span {
@@ -448,13 +448,7 @@ img {
   overflow: hidden;
   width: 100%;
   mask-image: linear-gradient(to right, transparent 0, #000 48px, #000 calc(100% - 48px), transparent 100%);
-  -webkit-mask-image: linear-gradient(
-    to right,
-    transparent 0,
-    #000 48px,
-    #000 calc(100% - 48px),
-    transparent 100%
-  );
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 48px, #000 calc(100% - 48px), transparent 100%);
 }
 .tag-track {
   display: flex;

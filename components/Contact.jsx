@@ -27,14 +27,13 @@ export default function Contact() {
 
     setStatus("sending");
     try {
-      // TODO: wire this up to a real form backend before going live, e.g.:
-      //   1. Formspree (easiest): create a form at https://formspree.io,
-      //      then set the action below to your endpoint and use method="POST".
-      //   2. Or build a Next.js API route (app/api/contact/route.js) that
-      //      sends the email via Resend/SendGrid/Nodemailer.
-      //
-      // For now this just simulates success so the form is fully testable.
-      await new Promise((resolve) => setTimeout(resolve, 600));
+      const formspreeId = process.env.NEXT_PUBLIC_FORMSPREE_FORM_ID;
+      const res = await fetch(`https://formspree.io/f/${formspreeId}`, {
+        method: "POST",
+        headers: { Accept: "application/json", "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) throw new Error("Formspree request failed");
       setStatus("success");
       setForm({ name: "", email: "", message: "" });
     } catch {

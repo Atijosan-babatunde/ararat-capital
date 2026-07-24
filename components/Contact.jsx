@@ -27,8 +27,7 @@ export default function Contact() {
 
     setStatus("sending");
     try {
-      const formspreeId = process.env.NEXT_PUBLIC_FORMSPREE_FORM_ID;
-      const res = await fetch(`https://formspree.io/f/${formspreeId}`, {
+      const res = await fetch("https://formspree.io/f/mpqvyqod", {
         method: "POST",
         headers: { Accept: "application/json", "Content-Type": "application/json" },
         body: JSON.stringify(form),
